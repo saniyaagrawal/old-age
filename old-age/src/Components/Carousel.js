@@ -10,17 +10,16 @@ class CustomCarousel extends Component {
         return (
             <Carousel>
                 <div>
-                <p className="legend">Give Your Loved Ones Quality Care You Can Trust.</p>
+                    <p className="legend">Give Your Loved Ones Quality Care You Can Trust.</p>
                     <img src="https://images.outlookindia.com/public/uploads/articles/2019/4/30/senior_citizen_20190513.jpg" />
-                    
                 </div>
                 {/* <div>
-                    <img src="../public/images/img.jpg" />
-                    <p className="legend">Legend 2</p>
+                    <p className="legend">Give Your Loved Ones Quality Care You Can Trust.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDCi1Zg_bQoNJTaqlrcm2rimOKVr-HdhNbkQ&usqp=CAU" />
                 </div>
                 <div>
-                    <img src="../public/images/img.jpg" />
-                    <p className="legend">Legend 3</p>
+                    <p className="legend">Give Your Loved Ones Quality Care You Can Trust.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt51tOfYdLJj9SsR1ztKDMvESak2EfcEF_eA&usqp=CAU" />
                 </div> */}
             </Carousel>
         );
