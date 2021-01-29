@@ -4,7 +4,7 @@ import './App.css';
 // import CustomCarousel from './Components/Carousel'
 // import SearchResults from './pages/SearchResults';
 import Home from './pages/Home';
-import Header from './Components/Header';
+import Header from './components/Header';
 
 function App() {
   return (

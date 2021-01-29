@@ -1,5 +1,5 @@
-import { Avatar } from '@material-ui/core';
-import React from 'react';
+import { Avatar } from './node_modules/@material-ui/core';
+import React from './node_modules/react';
 import '../styles/searchlist.css';
 // import {Avatar} from '@material-ui/core';
 

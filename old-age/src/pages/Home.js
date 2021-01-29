@@ -1,11 +1,11 @@
 import React from 'react'
-import CustomCarousel from '../Components/Carousel'
+// import CustomCarousel from '../components/Carousel'
 
 function Home() {
     return (
         <div>
             {/* Give Your Loved Ones Quality Care You Can Trust. */}
-            <CustomCarousel />
+            {/* <CustomCarousel /> */}
         </div>
     )
 }

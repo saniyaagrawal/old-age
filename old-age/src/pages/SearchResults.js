@@ -1,6 +1,6 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import SearchList from '../Components/SearchList';
+import SearchList from '../components/SearchList';
 
 const old_ages = [
     {
