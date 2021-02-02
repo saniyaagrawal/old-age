@@ -1,0 +1,6 @@
+.outer{
+    display: flex;
+    overflow-x: hidden;
+    width: 100vw;
+    padding-right: 20px;
+}
