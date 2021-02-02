@@ -13,3 +13,11 @@
   color: gray;
 }
 
+.content{
+  margin: 10px;
+}
+
+.column{
+  display: flex;
+  flex-flow: column wrap;
+}

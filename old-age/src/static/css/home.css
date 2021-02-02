@@ -1,3 +1,18 @@
-.home{
-    
+.features{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    place-content: space-around space-around;
+}
+
+.hrline{
+    width: 50%;
+    height: 3px;
+    border-radius: 1000px;
+    background-color: black;
+    border: 0;
+}
+
+.individual:hover .hrline{
+    width: 90%;
+    transition: 0.5s;
 }
