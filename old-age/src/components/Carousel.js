@@ -1,5 +1,4 @@
 import React,{useState} from 'react';
-import '../static/css/carousel.css';
 import MinimizeRoundedIcon from '@material-ui/icons/MinimizeRounded';
 import { Button } from '@material-ui/core';
 
@@ -13,15 +12,15 @@ function Carousel() {
     const [x, setX] = useState(0);
 
     return (
-        <div className="carousel">
-            <div className="outer">
+        <>
+            <div style={{display: 'flex', overflowX: "hidden", width: "100vw", marginTop:'10px', marginBottom: '10px'}}>
                 {banners.map((banner, index) => {
                     return (
-                        <div style={{transition: '1s', position: 'relative', transform: `translateX(${x * -100 + "%"})`}}>
+                        <div style={{transition: '1s', position: 'relative', transform: `translateX(${x * -100 + "%"})`, marginLeft:index===0?"10px":0}}>
                             <img src={banner}
                                 alt="banner"
                                 key={index}
-                                style={{ borderRadius: 15, height: '80vh', width: '100vw', marginRight: '20px', objectFit: 'cover' }}
+                                style={{ borderRadius: 15, height: '80vh', width: '96vw', marginRight: index!==banners.length-1?'10px':0, objectFit: 'cover' }}
                             />
                         </div>
                     )
@@ -32,7 +31,7 @@ function Carousel() {
                     <MinimizeRoundedIcon style={{ color: `${x === i ? '#3F51B5' : 'black'}` }} />
                 </Button>)}
             </div>
-        </div>
+        </>
     )
 }
 
