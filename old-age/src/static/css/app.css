@@ -1,10 +1,14 @@
 .app {
   text-align: center;
-  background-image: url("../images/bg\ .jpg");
-  height: 100vh;
-  width: 100vw;
-  background-size: cover;
   overflow-x: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.fg{
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 
@@ -21,3 +25,14 @@
   display: flex;
   flex-flow: column wrap;
 }
+
+.input_field, .input_field:focus{
+  width: 500px;
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  margin: 10px;
+  box-shadow: 2px 4px 8px 2px #888888;
+  outline: 0;
+}
+

@@ -3,8 +3,10 @@ import React from 'react'
 import Carousel from '../components/Carousel';
 import '../static/css/app.css';
 import '../static/css/home.css';
-import {Typography} from '@material-ui/core';
+import {Typography, TextField, Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import Map from '../static/images/map.jpg'
+import Icon from '../static/images/icon1.png'
 
 
 const features = [
@@ -41,13 +43,13 @@ function Home() {
             <Carousel/>
             {/* Give Your Loved Ones Quality Care You Can Trust. */}
             <div className="content">
-                <Typography variant="h2" gutterBottom>
+                <Typography variant="h3" gutterBottom>
                     The Problem
                 </Typography>
                 <div className="features">
                     {features.map((feature, i) => (
                         <div className={[classes.root, "individual"].join(' ')} key={i}>
-                            <img src={"https://p7.hiclipart.com/preview/496/868/928/old-age-computer-icons-aged-care-others.jpg"} 
+                            <img src={Icon} 
                                 style={{height: '60px', width: '60px', marginRight: '20px'}}
                                 alt="icon"
                             />
@@ -57,6 +59,19 @@ function Home() {
                             </div>
                         </div>
                     ))}
+                </div>
+                <Typography variant="h3" gutterBottom>
+                    The Solution
+                </Typography>
+                <div className="search_map">
+                    <img src={Map}  className="map"/>
+                    <form className="search">
+                        <Typography variant="h3" style={{position: 'absolute', top: '-60px', marginLeft: '30px'}}>Search Old Age</Typography>
+                        <input className="input_field"  placeholder="Search on map"/>
+                        <Button variant="contained" color="primary" style={{margin: "10px"}}>
+                            Search
+                        </Button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -69,7 +84,8 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(1),
       display: 'flex',
       fontWeight: 'bold',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      margin: '50px'
     }
   }));
 
