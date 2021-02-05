@@ -1,7 +1,6 @@
-import { Avatar } from './node_modules/@material-ui/core';
-import React from './node_modules/react';
+import React from 'react';
 import '../styles/searchlist.css';
-// import {Avatar} from '@material-ui/core';
+import {Avatar} from '@material-ui/core';
 
 
 export default function SearchList({old_ages}) {
