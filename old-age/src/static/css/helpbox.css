@@ -1,0 +1,14 @@
+.helpbox{
+    background-color: white;
+    height: 50%;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.item{
+    padding: 2% 10%;
+}
+
+.description{
+    padding-top: 2%;
+}

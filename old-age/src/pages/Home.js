@@ -7,6 +7,7 @@ import {Typography, TextField, Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Map from '../static/images/map.jpg'
 import Icon from '../static/images/icon1.png'
+import HelpBox from '../components/HelpBox';
 
 
 const features = [
@@ -72,6 +73,12 @@ function Home() {
                             Search
                         </Button>
                     </form>
+                </div>
+                <Typography variant="h3" gutterBottom>
+                    How You Can Help
+                </Typography>
+                <div>
+                    <HelpBox />
                 </div>
             </div>
         </div>
