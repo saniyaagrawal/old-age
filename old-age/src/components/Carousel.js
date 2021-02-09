@@ -1,11 +1,12 @@
 import React,{useState} from 'react';
 import MinimizeRoundedIcon from '@material-ui/icons/MinimizeRounded';
 import { Button } from '@material-ui/core';
+import Image1 from '../static/images/carousel1.jpeg'
 
 const banners = [
-    "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-    "https://images.unsplash.com/photo-1571873735645-1ae72b963024?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjIxMTIzfQ&auto=format&fit=crop&w=1050&q=80",
-    "https://images.unsplash.com/photo-1587632467120-c79b296a5dda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+    Image1,
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQquK1V3Pkn9cDD_14kRY1BIlBG85djkj4pZA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCoKXib2Xp1yJ8AXSbS5lO5lVd9Dr7Lg051w&usqp=CAU"
 ]
 
 function Carousel() {
