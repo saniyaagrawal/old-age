@@ -1,6 +1,5 @@
 var express = require("express");
 var Routes = require("./routes");
-// const db=require("./connection");
 var dotenv = require('dotenv');
 dotenv.config();
 

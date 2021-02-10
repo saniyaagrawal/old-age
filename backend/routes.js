@@ -1,10 +1,16 @@
-var Hello = require('./controllers/hello');
+var {getOldages, addOldage} = require('./controllers/oldage'); 
+
 
 const Routes = [
     {
-        path: '/hello',
+        path: '/oldage',
         method: 'get',
-        action: Hello
+        action: getOldages
+    },
+    {
+        path: '/oldage',
+        method: 'post',
+        action: addOldage
     }
 ]
 
