@@ -14,7 +14,7 @@ const addOldage = (req, res) => {
     db.query(query, (err, data) => {
         if(err){
             db.query(`create table oldage (name varchar(40), address varchar(255)) ${query}`, (err ,data) => {
-                if(err) res.status(400).json({status: failed, message: 'insert into oldage failed!'});
+                if(err) res.status(400).json({status: 'failed', message: 'insert into oldage failed!'});
                 else res.status(200).json({status: 'success', payload: data});
             })
         }else{

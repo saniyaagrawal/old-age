@@ -1,4 +1,5 @@
 var {getOldages, addOldage} = require('./controllers/oldage'); 
+var  {signup} = require('./controllers/user');
 
 
 const Routes = [
@@ -11,6 +12,11 @@ const Routes = [
         path: '/oldage',
         method: 'post',
         action: addOldage
+    },
+    {
+        path: '/signup',
+        method: 'post',
+        action: signup
     }
 ]
 
