@@ -2,9 +2,12 @@ const db=require("../connection");
 
 
 const addReview = (req, res) => {
-    var query1 = "insert into review(rating, description, user_id) values (?,?,?)";
+
+    var query1 = "insert into review(rating, description) values (?,?)";
     var query2 = "insert into belongs(review_id, oldage_id) values (?,?)";
-    db.query(query1, [req.body.rating, req.body.description, req.body.user_id], (err, data) => {
+    var query3 = "insert into writtenby(review_id, user_id) values (?,?)";
+
+    db.query(query1, [req.body.rating, req.body.description], (err, data) => {
         if(err){
             res.status(400).json({status: 'failed', message: 'insert into review failed!'});
         }else{
@@ -13,7 +16,13 @@ const addReview = (req, res) => {
                 if(err){
                     res.status(400).json({status: 'failed', message: 'insert into belongs failed!'});
                 }else{
-                    res.status(200).json({status: 'success', payload: data});
+                    db.query(query3, [id, req.body.user_id], (err, data) => {
+                        if(err){
+                            res.status(400).json({status: 'failed', message: 'insert into belongs failed!'});
+                        }else{
+                            res.status(200).json({status: 'success', payload: data});
+                        }
+                    })
                 }
             })
         }
