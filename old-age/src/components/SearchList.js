@@ -6,7 +6,7 @@ import {Avatar} from '@material-ui/core';
 export default function SearchList({old_ages}) {
 
   return (
-    <div className="list">
+    <div className="list" style={{backgroundColor: 'white'}}>
       {old_ages.map((data, i) => {
         return(
           <div className="child">

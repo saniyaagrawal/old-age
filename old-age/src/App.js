@@ -18,23 +18,26 @@ function App() {
       <div className="app">
       <img src={BG} style={{width: '100%', filter: 'blur(4px)', position: 'fixed', objectFit: 'cover', left: 0}}/>
       <div className="fg">
-        {/* <Header/>
-        <Home/> */}
-        {/* <SearchResults/> */}
-        {/* <SpecificPlace/> */}
+      
         <Switch>
-          <Route path="/login">
-            <Login/>
-          </Route>
-          <Route path="/signup">
-            <Signup/>
-          </Route>
-          <Route path="/">
-            <Header/>
-            <Home/>
-          </Route>
+            <Route path="/login">
+              <Login/>
+            </Route>
+            <Route path="/signup">
+              <Signup/>
+            </Route>
+            <Route path="/searchresult">
+              <SearchResults/>
+            </Route>
+            <Route path="/">
+              <Header/>
+              <Home/>
+            </Route>
+            
         </Switch>
       </div>
+
+      
     </div>
     </Router>
   );
