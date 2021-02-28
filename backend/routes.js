@@ -32,7 +32,7 @@ const Routes = [
         path: '/login',
         method: 'post',
         action: login
-    }
+    },
     {
         path: '/oldage/:oldageId/review',
         method: 'post',
