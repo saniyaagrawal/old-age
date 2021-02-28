@@ -1,5 +1,5 @@
-var {getOldages, addOldage} = require('./controllers/oldage'); 
-
+var {getOldages, getOldage, addOldage, addBankdetails} = require('./controllers/oldage'); 
+var {addReview} = require('./controllers/review'); 
 
 const Routes = [
     {
@@ -8,9 +8,24 @@ const Routes = [
         action: getOldages
     },
     {
+        path: '/oldage/:oldageId',
+        method: 'get',
+        action: getOldage
+    },
+    {
         path: '/oldage',
         method: 'post',
         action: addOldage
+    },
+    {
+        path: '/oldage/:oldageId/review',
+        method: 'post',
+        action: addReview
+    },
+    {
+        path: '/oldage/:oldageId/bankdetails',
+        method: 'post',
+        action: addBankdetails
     }
 ]
 

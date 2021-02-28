@@ -4,7 +4,7 @@ const db=mysql.createConnection({
     user: "root",
     password: "password",
     insecureAuth: true,
-    database: "oldAge",
+    database: "oldage",
     multipleStatements: true
 });
 
