@@ -1,5 +1,5 @@
 var {getOldages, addOldage} = require('./controllers/oldage'); 
-var  {signup} = require('./controllers/user');
+var  {signup, verifyOtp, login} = require('./controllers/user');
 
 
 const Routes = [
@@ -17,6 +17,16 @@ const Routes = [
         path: '/signup',
         method: 'post',
         action: signup
+    },
+    {
+        path: '/verifyotp',
+        method: 'post',
+        action: verifyOtp
+    },
+    {
+        path: '/login',
+        method: 'post',
+        action: login
     }
 ]
 

@@ -7,6 +7,8 @@ const app = express();
 const port = process.env.PORT || 8080;
 const host = process.env.HOST || "localhost";
 
+app.use(express.json());
+
 Routes.map(route => {
     (app)[route.method](route.path, (req, res) =>  route.action(req, res));
 })
