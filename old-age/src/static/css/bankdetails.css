@@ -1,0 +1,30 @@
+/* .bankdetails{
+    background-color: khaki;
+    margin-inline: 20%;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-inline: 30%;
+} */
+
+.heading{
+    font-size: large;
+    font-weight: bold;
+    text-decoration-color: indigo;
+}
+
+.key_value{
+    display: flex;
+    flex-direction: row;
+}
+
+.key{
+    font-weight: 700;
+}
+
+.value{
+    margin-left: 2%;
+}
