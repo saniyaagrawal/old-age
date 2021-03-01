@@ -36,3 +36,8 @@
   outline: 0;
 }
 
+.error{
+  font-size: 15px;
+  color: red;
+}
+
