@@ -3,6 +3,7 @@ import { Button, Modal } from 'react-bootstrap';
 import '../static/css/mymodal.css'
 import StaticStars from './StaticStars';
 import BankDetails from './BankDetails';
+import MemberCard from './MemberCard';
 
 function MyModal() {
     const [show, setShow] = useState(false);
@@ -26,6 +27,7 @@ function MyModal() {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <MemberCard/>
           <BankDetails/>
           <div className='review'>Reviews:</div>
           <div>
