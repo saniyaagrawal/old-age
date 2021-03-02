@@ -8,6 +8,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Map from '../static/images/map.jpg'
 import Icon from '../static/images/icon1.png'
 import HelpBox from '../components/HelpBox';
+import MyModal from '../components/MyModal';
+import RatingStars from '../components/RatingStars';
 
 
 const features = [
@@ -42,6 +44,8 @@ function Home() {
     return (
         <div className="home">            
             <Carousel/>
+            <MyModal/>
+            <RatingStars/>
             {/* Give Your Loved Ones Quality Care You Can Trust. */}
             <div className="content">
                 <Typography variant="h3" gutterBottom>

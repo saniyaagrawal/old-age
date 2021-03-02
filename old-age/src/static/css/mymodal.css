@@ -1,0 +1,19 @@
+.review{
+    font-size: x-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.name_stars{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stars{
+    margin-left: 5%;
+}
+
+.name{
+    font-size: larger;
+    font-weight: bold;
+}
