@@ -23,7 +23,7 @@ function MyModal() {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
-            Help Age India 
+            Name of Oldage
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -33,7 +33,7 @@ function MyModal() {
           <div>
             <div className='name_stars'>
                 <div className='name'>Saniya Agrawal</div>
-                <div className='stars'><StaticStars/></div>
+                <div className='stars'><StaticStars value={3}/></div>
             </div>
             <div>This is a good and friendly place.</div>
           </div>
