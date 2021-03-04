@@ -1,11 +1,13 @@
 import React from 'react'
 import '../static/css/bankdetails.css'
+import { CashStack } from 'react-bootstrap-icons';
+
 
 function BankDetails() {
     return (
         <div className='bankdetails'>
             <div className='body'>
-                <div className='heading'>Donate Us At :</div>
+                <div className='heading'><CashStack/> Donate Us At : </div>
                 <div className='key_value'>
                     <div className='key'>Account Number: </div>
                     <div className='value'>3456789213 </div>

@@ -1,5 +1,5 @@
 .review{
-    font-size: x-large;
+    font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -16,4 +16,17 @@
 .name{
     font-size: larger;
     font-weight: bold;
+}
+
+.members{   
+    overflow-x: scroll;
+    display: flex;
+}
+
+.oldage_details{
+    margin-left: 2%
+}
+
+.facilities {
+    margin-left: 2%;
 }
