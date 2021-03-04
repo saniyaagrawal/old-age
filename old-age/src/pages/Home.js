@@ -43,7 +43,7 @@ function Home() {
     const classes = useStyles();
     return (
         <div className="home">            
-            <Carousel/>
+            {/* <Carousel/> */}
             <MyModal/>
             <RatingStars/>
             {/* Give Your Loved Ones Quality Care You Can Trust. */}
