@@ -1,10 +1,13 @@
 var express = require("express");
 var Routes = require("./routes");
 var dotenv = require('dotenv');
+var cors = require('cors')
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(cors())
+
 const port = process.env.PORT || 8080;
 const host = process.env.HOST || "localhost";
 
