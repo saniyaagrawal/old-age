@@ -2,6 +2,8 @@
     width: 100vw;
     height: 50px;
     /* background-color: black; */
+    position: fixed;
+    z-index: 1000;
 }
 .nav {
     color: rgb(226, 219, 219);
