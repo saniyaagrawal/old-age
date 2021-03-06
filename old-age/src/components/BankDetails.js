@@ -7,7 +7,7 @@ function BankDetails() {
     return (
         <div className='bankdetails'>
             <div className='body'>
-                <div className='heading'><CashStack/> Donate Us At : </div>
+                <h4><CashStack/> Donate Us At </h4>
                 <div className='key_value'>
                     <div className='key'>Account Number: </div>
                     <div className='value'>3456789213 </div>

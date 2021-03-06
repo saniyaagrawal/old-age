@@ -18,7 +18,6 @@ function App() {
       <div className="app">
       <img src={BG} style={{width: '100%', filter: 'blur(4px)', position: 'fixed', objectFit: 'cover', left: 0}}/>
       <div className="fg">
-      
         <Switch>
             <Route path="/login">
               <Login/>
@@ -33,7 +32,6 @@ function App() {
               <Header/>
               <Home/>
             </Route>
-            
         </Switch>
       </div>
 

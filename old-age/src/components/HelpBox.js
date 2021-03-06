@@ -33,9 +33,9 @@ function HelpBox() {
                     All we need is 3 hours/week at least twice a month to make a real impact. If we have a team in your city looking to grow, a Robin will reach out to you.
                 </div>
             </div>
-            <div className='item'>
+            {/* <div className='item'>
                 <Button variant="contained" color="primary">Donate Us</Button>
-            </div>
+            </div> */}
         </div>
     )
 }
