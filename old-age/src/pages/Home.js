@@ -10,6 +10,7 @@ import Icon from '../static/images/icon1.png'
 import HelpBox from '../components/HelpBox';
 import MyModal from '../components/MyModal';
 import RatingStars from '../components/RatingStars';
+import {Link} from 'react-router-dom'
 
 
 const features = [
@@ -72,9 +73,11 @@ function Home() {
                     <form className="search">
                         <Typography variant="h3" style={{position: 'absolute', top: '-60px', marginLeft: '30px'}}>Search Old Age</Typography>
                         <input className="input_field"  placeholder="Search on map"/>
-                        <Button variant="contained" color="primary" style={{margin: "10px"}}>
-                            Search
-                        </Button>
+                        <Link to='/searchresult'>
+                            <Button variant="contained" color="primary" style={{margin: "10px"}}>
+                                Search
+                            </Button>
+                        </Link>
                     </form>
                 </div>
                 <Typography variant="h3" gutterBottom>
