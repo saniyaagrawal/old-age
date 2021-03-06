@@ -45,7 +45,6 @@ function Home() {
         <div className="home">            
             {/* <Carousel/> */}
             <MyModal/>
-            <RatingStars/>
             {/* Give Your Loved Ones Quality Care You Can Trust. */}
             <div className="content">
                 <Typography variant="h3" gutterBottom>

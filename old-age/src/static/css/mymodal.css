@@ -1,3 +1,12 @@
+.modal_heading{
+    display: flex;
+    flex-direction: row;
+}
+
+.heading_stars{
+    margin-left: 20px;
+}
+
 .review{
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
