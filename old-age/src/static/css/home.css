@@ -28,7 +28,8 @@
 
 .map{
     height: 100%;
-    width:100%;
+    width:80%;
+    align-self: center;
     object-fit: cover;
     border-radius: 10px;
     
@@ -37,7 +38,7 @@
 .search{
     position: absolute;
     top: 40%;
-    left: 60%;
+    left: 50%;
 }
 
 
