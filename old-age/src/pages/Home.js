@@ -1,15 +1,13 @@
 import React from 'react'
-// import CustomCarousel from '../components/Carousel'
-import Carousel from '../components/Carousel';
 import '../static/css/app.css';
 import '../static/css/home.css';
-import {Typography, TextField, Button} from '@material-ui/core';
+import {Typography, Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Map from '../static/images/map.jpg'
 import Icon from '../static/images/icon1.png'
 import HelpBox from '../components/HelpBox';
 import MyModal from '../components/MyModal';
-import RatingStars from '../components/RatingStars';
+import ImageHome from '../components/ImageHome';
 import {Link} from 'react-router-dom'
 
 
@@ -43,7 +41,8 @@ const features = [
 function Home() {
     const classes = useStyles();
     return (
-        <div className="home">            
+        <div className="home">  
+          <ImageHome />         
             {/* <Carousel/> */}
             <MyModal/>
             {/* Give Your Loved Ones Quality Care You Can Trust. */}
