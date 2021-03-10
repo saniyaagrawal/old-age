@@ -1,6 +1,7 @@
 .app {
   text-align: center;
   overflow-x: hidden;
+  background-color: #ffeab0;
   height: 100vh;
 }
 
@@ -8,6 +9,7 @@
   position: absolute;
   top: 0;
   width: 100%;
+  background-color: #ffeab0;
 }
 
 

@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <div className='header'>
-      <Navbar color="dark" dark expand="md">
+      <Navbar style={{backgroundColor: 'black'}}  expand="md">
         <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlfCo4WXZ6LIrDGkMerDUdVK9L0oo4S1O2xw&usqp=CAU' style={{height: '60px', width: '60px', marginRight: '20px', borderRadius : '100%'}} alt="icon" />
         <NavbarBrand href="/">OLDAGE</NavbarBrand>
         <NavbarToggler onClick={toggle} />

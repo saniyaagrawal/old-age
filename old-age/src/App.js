@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div className="app">
-      <img src={BG} style={{width: '100%', filter: 'blur(4px)', position: 'fixed', objectFit: 'cover', left: 0}}/>
+      {/* <img src={BG} style={{width: '100%', filter: 'blur(4px)', position: 'fixed', objectFit: 'cover', left: 0}}/> */}
       <div className="fg">
         <Switch>
             <Route path="/login">
