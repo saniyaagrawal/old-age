@@ -20,6 +20,11 @@ const Header = () => {
   };
   const toggle = () => setIsOpen(!isOpen);
 
+  useEffect(() => {
+    var token = JSON.parse(window.localStorage.getItem('token'));
+    if(token) setIslogin(true);
+  }, [])
+
   return (
     <div className='header'>
       <Navbar style={{backgroundColor: 'black'}}  expand="md">
@@ -38,7 +43,7 @@ const Header = () => {
                 <NavLink href="/login" style={{textDecoration:'none'}}><h4 className='nav'>Donate</h4></NavLink>
               </NavItem> 
             {islogin ? <NavItem>
-                <NavLink href="/" style={{textDecoration:'none'}}><h4 className='nav'>Logout</h4></NavLink>
+                <NavLink onClick={() => window.localStorage.removeItem("token")} href="/" style={{textDecoration:'none'}}><h4 className='nav'>Logout</h4></NavLink>
               </NavItem> :
               <NavItem>
                 <NavLink href="/login" style={{textDecoration:'none'}}><h4 className='nav'>Login / Signup</h4></NavLink>

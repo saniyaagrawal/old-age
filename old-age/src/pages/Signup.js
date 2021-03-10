@@ -44,7 +44,10 @@ function Signup() {
             fetch(`${BASEURL}verifyotp`, opts)
             .then(res => res.json())
             .then(data => {
-                if(data.status==='success') setMess(data.message);
+                if(data.status==='success') {
+                    setMess(data.message);
+                    window.localStorage.setItem("token", JSON.stringify(data.token));
+                }
                 else setError(data.message);
             })
         }
