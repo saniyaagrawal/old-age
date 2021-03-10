@@ -11,12 +11,14 @@ import Header from './components/Header';
 import BG from './static/images/bg.jpg'
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
       <div className="app">
       {/* <img src={BG} style={{width: '100%', filter: 'blur(4px)', position: 'fixed', objectFit: 'cover', left: 0}}/> */}
+      <Header/>
       <div className="fg">
         <Switch>
             <Route path="/login">
@@ -29,12 +31,11 @@ function App() {
               <SearchResults/>
             </Route>
             <Route path="/">
-              <Header/>
               <Home/>
             </Route>
         </Switch>
+        <Footer/>
       </div>
-
       
     </div>
     </Router>
