@@ -1,0 +1,16 @@
+.imagehome{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(247, 245, 253);
+}
+
+.heading_home {
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-inline: 10%;
+}
+
+.image{
+    margin-right: 10%;
+}
