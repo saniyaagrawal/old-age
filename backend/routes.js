@@ -14,7 +14,7 @@ const Routes = [
         action: getOldage
     },
     {
-        path: '/oldage',
+        path: '/add',
         method: 'post',
         action: addOldage
     },
@@ -37,11 +37,6 @@ const Routes = [
         path: '/oldage/:oldageId/review',
         method: 'post',
         action: addReview
-    },
-    {
-        path: '/oldage/:oldageId/bankdetails',
-        method: 'post',
-        action: addBankdetails
     }
 ]
 
