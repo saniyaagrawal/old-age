@@ -11,7 +11,9 @@ import Header from './components/Header';
 import BG from './static/images/bg.jpg'
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import AddOldage from './pages/AddOldage';
 import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -25,6 +27,9 @@ function App() {
             </Route>
             <Route path="/signup">
               <Signup/>
+            </Route>
+            <Route path="/add">
+              <AddOldage/>
             </Route>
             <Route path="/searchresult">
               <SearchResults/>
