@@ -32,9 +32,9 @@ const old_ages = [
 
 function SearchResults() {
     return (
-        <div style={{height: '100vh', display: 'flex'}}>
+        <div style={{ display: 'flex',  height: '86vh', marginTop: -50, marginBottom: -20 }}>
             <SearchList old_ages={old_ages}/>
-            <MapContainer center={[22.71, 75.85]} zoom={13} style={{height: '100vh', width: '100%'}}>
+            <MapContainer center={[22.71, 75.85]} zoom={13} style={{height: '100%', width: '100%'}}>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

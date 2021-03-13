@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/searchlist.css';
+import '../static/css/searchlist.css';
 import {Avatar} from '@material-ui/core';
 
 
@@ -7,6 +7,7 @@ export default function SearchList({old_ages}) {
 
   return (
     <div className="list" style={{backgroundColor: 'white'}}>
+      <input placeholder="Search on map"/>
       {old_ages.map((data, i) => {
         return(
           <div className="child">

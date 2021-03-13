@@ -9,6 +9,7 @@ import {
   NavLink
 } from "reactstrap";
 import '../static/css/header.css';
+import Icon from '../static/images/old-man.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,10 +20,15 @@ const Header = () => {
   };
   const toggle = () => setIsOpen(!isOpen);
 
+  useEffect(() => {
+    var token = JSON.parse(window.localStorage.getItem('token'));
+    if(token) setIslogin(true);
+  }, [])
+
   return (
     <div className='header'>
       <Navbar style={{backgroundColor: 'black'}}  expand="md">
-        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlfCo4WXZ6LIrDGkMerDUdVK9L0oo4S1O2xw&usqp=CAU' style={{height: '60px', width: '60px', marginRight: '20px', borderRadius : '100%'}} alt="icon" />
+        <img src={Icon} style={{height: '40px', width: '40px', marginRight: '20px', borderRadius : '100%'}} alt="icon" />
         <NavbarBrand href="/">OLDAGE</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -37,10 +43,10 @@ const Header = () => {
                 <NavLink href="/login" style={{textDecoration:'none'}}><h4 className='nav'>Donate</h4></NavLink>
               </NavItem> 
             {islogin ? <NavItem>
-                <NavLink href="/" style={{textDecoration:'none'}}><h4 className='nav'>Logout</h4></NavLink>
+                <NavLink onClick={() => window.localStorage.removeItem("token")} href="/" style={{textDecoration:'none'}}><h4 className='nav'>Logout</h4></NavLink>
               </NavItem> :
               <NavItem>
-                <NavLink href="/login" style={{textDecoration:'none'}}><h4 className='nav'>Login</h4></NavLink>
+                <NavLink href="/login" style={{textDecoration:'none'}}><h4 className='nav'>Login / Signup</h4></NavLink>
               </NavItem>
             }
           </Nav>
