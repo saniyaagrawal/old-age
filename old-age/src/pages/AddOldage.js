@@ -11,7 +11,7 @@ function AddOldage() {
   const [email, setEmail] = useState("");
   const [visiting_hours, setVisiting_hours] = useState("");
   const [account_name, setAccount_name] = useState("");
-  const [account_no, setAccount_no] = useState("");
+  const [account_no, setAccount_no] = useState(0);
   const [bank_name, setBank_name] = useState("");
   const [ifsc_code, setIfsc_code] = useState("");
 
