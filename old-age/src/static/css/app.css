@@ -5,6 +5,13 @@
   height: 100vh;
 }
 
+.fg{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  /* background-color: #ffeab0; */
+}
+
 .font{
   font-size: 10px;
   color: gray;
