@@ -40,13 +40,16 @@ function Login() {
             fetch(`${BASEURL}verifyotp`, opts)
             .then(res => res.json())
             .then(data => {
-                if(data.status==='success') setMess(data.message);
+                if(data.status==='success') {
+                    setMess(data.message);
+                    window.localStorage.setItem("token", JSON.stringify(data.token));
+                }
                 else setError(data.message);
             })
         }
     }
     return (
-        <div className="login" id="bg">
+        <div className="login" id="bg" style={{marginBottom: '135px'}}>
             <Typography variant="h2" style={{margin: '40px'}}>Login</Typography>
             <form className="login">
                 <input className="input_field" placeholder="Phone No." type="numeric" value={mobile} onChange={(e) => setMobile(e.target.value)} />

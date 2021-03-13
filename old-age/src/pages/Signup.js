@@ -44,14 +44,17 @@ function Signup() {
             fetch(`${BASEURL}verifyotp`, opts)
             .then(res => res.json())
             .then(data => {
-                if(data.status==='success') setMess(data.message);
+                if(data.status==='success') {
+                    setMess(data.message);
+                    window.localStorage.setItem("token", JSON.stringify(data.token));
+                }
                 else setError(data.message);
             })
         }
     }
 
     return (
-        <div className="login" id="bg">
+        <div className="login" id="bg" style={{marginBottom: '52px'}}>
             <Typography variant="h2" style={{margin: '40px'}}>Signup</Typography>
             <form className="login">
                 <input className="input_field" placeholder="Name" type="text" vlaue={name} onChange={(e) => setName(e.target.value)} />
