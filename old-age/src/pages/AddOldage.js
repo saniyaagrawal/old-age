@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { TextField } from "@material-ui/core";
 import "../static/css/addoldage.css";
-import axios from 'axios';
+import '../static/css/app.css';
+import BASEURL from '../baseUrl';
 
 function AddOldage() {
-  const [name, setName] = useState("");
+  const [name, setName] = useState(null);
   const [address, setAddress] = useState("");
   const [phone_no, setPhone_no] = useState("");
   const [email, setEmail] = useState("");
@@ -14,27 +15,48 @@ function AddOldage() {
   const [bank_name, setBank_name] = useState("");
   const [ifsc_code, setIfsc_code] = useState("");
 
+
+  const [error, setError] = useState(null);
+  const [mess, setMess] = useState(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const oldage = {
-      name,
-      address,
-      phone_no,
-      email,
-      visiting_hours,
-      account_name,
-      account_no,
-      bank_name,
-      ifsc_code
-    };
+    setMess(null);
+    setError(null);
 
-    axios
-      .post('http://localhost:8000/add', oldage)
-      .then(() => alert('Oldage succesfully added.'))
-      .catch(err => {
-        console.error(err);
-      });
+    const opts = {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({name,
+            address,
+            phone_no,
+            email,
+            visiting_hours,
+            account_name,
+            account_no,
+            bank_name,
+            ifsc_code
+        })
+    }
+
+    fetch(`${BASEURL}add`, opts)
+        .then(res => res.json())
+        .then(data => {
+        if(data.status==='success') {
+            setMess('NEW OLDAGE HOME ADDED!');
+        }
+        else setError('ERROR IN ADDING NEW OLDAGE');
+    })
+    setName('');
+    setAddress('');
+    setPhone_no('');
+    setEmail('');
+    setVisiting_hours('');
+    setAccount_name('');
+    setAccount_no('');
+    setBank_name('');
+    setIfsc_code('');
   };
 
   return (
@@ -165,6 +187,8 @@ function AddOldage() {
               </div>
             {/* </Link> */}
             </div>
+            {mess ? <p className="success">✓{mess}</p>:null}
+            {error ? <p className="error">⚠{error}</p>: null}
           </div>
         </form>
       </div>
