@@ -54,7 +54,7 @@ function Signup() {
     }
 
     return (
-        <div className="login" id="bg">
+        <div className="login" id="bg" style={{marginBottom: '52px'}}>
             <Typography variant="h2" style={{margin: '40px'}}>Signup</Typography>
             <form className="login">
                 <input className="input_field" placeholder="Name" type="text" vlaue={name} onChange={(e) => setName(e.target.value)} />
