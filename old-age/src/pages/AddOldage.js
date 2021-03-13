@@ -1,40 +1,40 @@
 import React, { useState } from "react";
 import { TextField } from "@material-ui/core";
 import "../static/css/addoldage.css";
-import { Link, Redirect } from "react-router-dom";
+import axios from 'axios';
 
 function AddOldage() {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [phone_no, setPhone_no] = useState("");
   const [email, setEmail] = useState("");
-  const [accountName, setAccountName] = useState("");
+  const [visiting_hours, setVisiting_hours] = useState("");
+  const [account_name, setAccount_name] = useState("");
   const [account_no, setAccount_no] = useState("");
-  const [bankName, setBankName] = useState("");
+  const [bank_name, setBank_name] = useState("");
   const [ifsc_code, setIfsc_code] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // const store_id=parseInt(localStorage.getItem("store_id"));
-    // const book = {
-    //   name,
-    //   description,
-    //   author,
-    //   price,
-    //   quantityIssue,
-    //   quantityPurchase,
-    //   genre,
-    //   shelf_number, 
-    //   store_id
-    // };
+    const oldage = {
+      name,
+      address,
+      phone_no,
+      email,
+      visiting_hours,
+      account_name,
+      account_no,
+      bank_name,
+      ifsc_code
+    };
 
-    // axios
-    //   .post('http://localhost:3001/add', book)
-    //   .then(() => alert('Book succesfully added.'))
-    //   .catch(err => {
-    //     console.error(err);
-    //   });
+    axios
+      .post('http://localhost:8000/add', oldage)
+      .then(() => alert('Oldage succesfully added.'))
+      .catch(err => {
+        console.error(err);
+      });
   };
 
   return (
@@ -95,14 +95,27 @@ function AddOldage() {
               </div>
             </div>
             <div className="add_row">
+              <h3 className="add_name">Visiting Hours: </h3>
+              <div className="add_input">
+                <TextField
+                  id="outlined-basic"
+                  label="Visiting Hours"
+                  variant="outlined"
+                  value={visiting_hours}
+                  onChange={(e) => setVisiting_hours(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+            <div className="add_row">
               <h3 className="add_name">Bank Name : </h3>
               <div className="add_input">
                 <TextField
                   id="outlined-basic"
                   label="Bank Name"
                   variant="outlined"
-                  value={bankName}
-                  onChange={(e) => setBankName(e.target.value)}
+                  value={bank_name}
+                  onChange={(e) => setBank_name(e.target.value)}
                   required
                 />
               </div>
@@ -114,8 +127,8 @@ function AddOldage() {
                   id="outlined-basic"
                   label="Account Name"
                   variant="outlined"
-                  value={accountName}
-                  onChange={(e) => setAccountName(e.target.value)}
+                  value={account_name}
+                  onChange={(e) => setAccount_name(e.target.value)}
                   required
                 />
               </div>
