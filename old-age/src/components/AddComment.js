@@ -1,16 +1,29 @@
 import React, {useState} from 'react'
-import RatingStars from './RatingStars';
-import {Button} from '@material-ui/core';
+import ReactStars from "react-rating-stars-component";
 import '../static/css/addcomment.css'
 
 function AddComment() {
-    const [comment, setComment]=useState();
+    const [description, setDescription]=useState();
+    const [rating, setRating]=useState();
+
+    const handleSubmit = () => {
+        console.log(rating+" "+description);
+        setRating(0)
+        setDescription('')
+    }
 
     return (
         <div>
-            <RatingStars/>
-            <input className="add_comment" placeholder="Comment" type="numeric" value={comment} onChange={(e)=>setComment(e.target.value)}/>
-            <Button variant="contained" color="primary">Post</Button>
+            <ReactStars
+                count={5}
+                onChange={(value)=>setRating(value)}
+                size={24}
+                activeColor="#ffd700"
+            />
+            <input className="add_comment" placeholder="Comment" type="numeric" value={description} onChange={(e)=>setDescription(e.target.value)}/>
+            <div className="btn btn-primary" style={{backgroundColor:'black'}} onClick={handleSubmit}>
+               Post
+            </div>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, Modal } from 'react-bootstrap';
 import '../static/css/mymodal.css'
 import '../static/css/app.css'
@@ -8,10 +8,23 @@ import MemberCard from './MemberCard';
 import { DropletHalf, GeoAlt, Telephone, Envelope } from 'react-bootstrap-icons';
 import AddComment from './AddComment';
 import Review from './Review';
+import BASEURL from '../baseUrl';
 
 
 function MyModal() {
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+
+    fetch(`${BASEURL}oldage/1`)
+      .then(res => res.json())
+      .then(data => {
+      if(data.status==='success') {
+        setData(data.payload)
+      }
+    })
+  }, [])
 
   return (
     <>
@@ -29,7 +42,7 @@ function MyModal() {
         <Modal.Header closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
             <div className='modal_heading'>
-              <div>Name of Oldage</div>
+              <div>{data[0][0].name}</div>
               <div className='heading_stars'><StaticStars value={4}/></div>
             </div>
           </Modal.Title>
@@ -39,8 +52,6 @@ function MyModal() {
             <img src='https://www.theparentscare.com/storage/avatar/450x/acdab1e7ee7fdb24eaed9c85e116e814_1596197538.jpg'
               style={{height:'30%',width:"100%", display:'flex',justifySelf:'center'}}
             />
-            {/* <div>Ratings (4.0)</div>
-            <StaticStars value={4}/> */}
             <hr style={{width: '100%', height: 1}} />
             <div className="oldage_details">
               <div className="row" style={{alignItems: 'center'}}>
@@ -48,14 +59,14 @@ function MyModal() {
                 <div className="name" style={{marginLeft:'1%'}}>
                   Address:
                 </div>
-                <div style={{marginLeft:'1%'}}>133, xyx some address, Indore (M.P.)</div>
+                <div style={{marginLeft:'1%'}}>{data[0][0].address}</div>
               </div>
               <div className="row" style={{alignItems: 'center'}}>
                 <Telephone/>
                 <div className="name" style={{marginLeft:'1%'}}>
                   Phone No.:
                 </div>
-                <div style={{marginLeft:'1%'}}>9334235245</div>
+                <div style={{marginLeft:'1%'}}>{data[0][0].phone_no}</div>
               </div>
               <div className="row" style={{alignItems: 'center'}}>
                 <Envelope/>
