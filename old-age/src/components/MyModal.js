@@ -13,17 +13,19 @@ import BASEURL from '../baseUrl';
 
 function MyModal() {
   const [show, setShow] = useState(false);
-  const [data, setData] = useState([]);
+  const [oldageData, setOldageData] = useState([]);
 
   useEffect(() => {
-
-    fetch(`${BASEURL}oldage/1`)
+    const run= ()=>{
+      fetch(`${BASEURL}oldage/1`)
       .then(res => res.json())
       .then(data => {
       if(data.status==='success') {
-        setData(data.payload)
+        setOldageData(data.payload)
       }
     })
+  }
+  run();
   }, [])
 
   return (
@@ -42,7 +44,7 @@ function MyModal() {
         <Modal.Header closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
             <div className='modal_heading'>
-              <div>{data[0][0].name}</div>
+              <div>name</div>
               <div className='heading_stars'><StaticStars value={4}/></div>
             </div>
           </Modal.Title>
@@ -59,21 +61,21 @@ function MyModal() {
                 <div className="name" style={{marginLeft:'1%'}}>
                   Address:
                 </div>
-                <div style={{marginLeft:'1%'}}>{data[0][0].address}</div>
+                <div style={{marginLeft:'1%'}}>address</div>
               </div>
               <div className="row" style={{alignItems: 'center'}}>
                 <Telephone/>
                 <div className="name" style={{marginLeft:'1%'}}>
                   Phone No.:
                 </div>
-                <div style={{marginLeft:'1%'}}>{data[0][0].phone_no}</div>
+                <div style={{marginLeft:'1%'}}>phone_no</div>
               </div>
               <div className="row" style={{alignItems: 'center'}}>
                 <Envelope/>
                 <div className="name" style={{marginLeft:'1%'}}>
                   Email:
                 </div>
-                <div style={{paddingLeft:'1%'}}>abc@gmail.com</div>
+                <div style={{paddingLeft:'1%'}}>email</div>
               </div>
             </div>
             <hr style={{width: '100%', height: 1}} />
@@ -111,12 +113,14 @@ function MyModal() {
             <BankDetails/>
             <hr style={{width: '100%', height: 1}} />
             <h4>Reviews</h4>
-            <Review/>
+            <Review allReviews={oldageData[2]}/>
             <h4>Add Review</h4>
             <AddComment/>
           </div>
         </Modal.Body>
+      
       </Modal>
+    
     </>
   );
 }
