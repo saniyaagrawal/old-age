@@ -21,7 +21,7 @@ function AddComment() {
                 activeColor="#ffd700"
             />
             <input className="add_comment" placeholder="Comment" type="numeric" value={description} onChange={(e)=>setDescription(e.target.value)}/>
-            <div className="btn btn-primary" style={{backgroundColor:'black'}} onClick={handleSubmit}>
+            <div className="btn btn-primary" onClick={handleSubmit}>
                Post
             </div>
         </div>
