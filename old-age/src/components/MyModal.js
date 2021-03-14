@@ -16,12 +16,12 @@ function MyModal() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`${BASEURL}oldage/1`)
+    fetch(`${BASEURL}oldage/55`)
       .then(res => res.json())
       .then(data => {
         if(data.status==='success') {
           setData(data.payload)
-          console.log(data.payload);
+          // console.log(data.payload);
         }
     })
   }, [])
@@ -44,7 +44,7 @@ function MyModal() {
         <Modal.Header closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
             <div className='modal_heading'>
-              <div>name</div>
+              <div>{data[0][0].name}</div>
               <div className='heading_stars'><StaticStars value={4}/></div>
             </div>
           </Modal.Title>
@@ -61,21 +61,21 @@ function MyModal() {
                 <div className="name" style={{marginLeft:'1%'}}>
                   Address:
                 </div>
-                <div style={{marginLeft:'1%'}}>address</div>
+                <div style={{marginLeft:'1%'}}>{data[0][0].address}</div>
               </div>
               <div className="row" style={{alignItems: 'center'}}>
                 <Telephone/>
                 <div className="name" style={{marginLeft:'1%'}}>
                   Phone No.:
                 </div>
-                <div style={{marginLeft:'1%'}}>phone_no</div>
+                <div style={{marginLeft:'1%'}}>{data[0][0].phone_no}</div>
               </div>
               <div className="row" style={{alignItems: 'center'}}>
                 <Envelope/>
                 <div className="name" style={{marginLeft:'1%'}}>
                   Email:
                 </div>
-                <div style={{paddingLeft:'1%'}}>email</div>
+                <div style={{paddingLeft:'1%'}}>{data[0][0].email}</div>
               </div>
             </div>
             <hr style={{width: '100%', height: 1}} />
@@ -110,7 +110,7 @@ function MyModal() {
               <MemberCard/>
             </div>
             <br/>
-            <BankDetails/>
+            <BankDetails details={data[1][0]}/>
             <hr style={{width: '100%', height: 1}} />
             <h4>Reviews</h4>
             <Review allReviews={data[2]}/>
