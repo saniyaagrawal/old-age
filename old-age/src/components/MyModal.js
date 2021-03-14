@@ -13,19 +13,20 @@ import BASEURL from '../baseUrl';
 
 function MyModal() {
   const [show, setShow] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-
     fetch(`${BASEURL}oldage/1`)
       .then(res => res.json())
       .then(data => {
-      if(data.status==='success') {
-        setData(data.payload)
-      }
+        if(data.status==='success') {
+          setData(data.payload)
+          console.log(data.payload);
+        }
     })
   }, [])
-
+  if(!data) return <h1>Loading ...</h1>
+  else
   return (
     <>
       <Button variant="primary" onClick={() => setShow(true)}>
