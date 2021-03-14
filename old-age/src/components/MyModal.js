@@ -113,7 +113,7 @@ function MyModal() {
             <BankDetails/>
             <hr style={{width: '100%', height: 1}} />
             <h4>Reviews</h4>
-            <Review allReviews={oldageData[2]}/>
+            <Review allReviews={data[2]}/>
             <h4>Add Review</h4>
             <AddComment/>
           </div>
