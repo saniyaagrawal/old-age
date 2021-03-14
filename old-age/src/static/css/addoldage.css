@@ -1,26 +1,28 @@
 
   .add_form {
-    padding-left: 5%;
     overflow-y: hidden;
+    display: flex;
+    justify-content: space-evenly;
   }
-  
+
   .add_row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: 1%;
+    margin-top: 3%;
+    justify-content: space-between;
+    width: 400px;
   }
-  
+
   .add_name {
     font-size: large;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     color: #070f14;
   }
-  
+
   .add_input {
     padding-left: 3%;
   }
-  
+
   .add_button {
     cursor: pointer;
     background-color: hsl(209, 87%, 65%);
@@ -29,4 +31,3 @@
     font-size: 110%;
     height: 2%;
   }
-  

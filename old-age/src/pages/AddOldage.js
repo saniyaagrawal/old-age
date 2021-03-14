@@ -11,9 +11,11 @@ function AddOldage() {
   const [email, setEmail] = useState("");
   const [visiting_hours, setVisiting_hours] = useState("");
   const [account_name, setAccount_name] = useState("");
-  const [account_no, setAccount_no] = useState(0);
+  const [account_no, setAccount_no] = useState("");
   const [bank_name, setBank_name] = useState("");
   const [ifsc_code, setIfsc_code] = useState("");
+  const [lat, setLat] = useState();
+  const [longi, setLongi] = useState();
 
 
   const [error, setError] = useState(null);
@@ -61,9 +63,11 @@ function AddOldage() {
 
   return (
     <>
+    <h1>Add an OldAge</h1>
       <div className="background">
         <form noValidate autoComplete="off">
           <div className="add_form">
+            <div> <h2>Basic Details</h2>
             <div className="add_row">
               <h1 className="add_name">Name:</h1>
               <div className="add_input">
@@ -86,6 +90,32 @@ function AddOldage() {
                   variant="outlined"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+            <div className="add_row">
+              <h3 className="add_name">Latitude: </h3>
+              <div className="add_input">
+                <TextField
+                  id="outlined-basic"
+                  label="Latitude"
+                  variant="outlined"
+                  value={lat}
+                  onChange={(e) => setLat(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+            <div className="add_row">
+              <h3 className="add_name">Longitude: </h3>
+              <div className="add_input">
+                <TextField
+                  id="outlined-basic"
+                  label="Longitude"
+                  variant="outlined"
+                  value={longi}
+                  onChange={(e) => setLongi(e.target.value)}
                   required
                 />
               </div>
@@ -129,6 +159,9 @@ function AddOldage() {
                 />
               </div>
             </div>
+            </div>
+            <div> 
+              <h2>Bank Details</h2>
             <div className="add_row">
               <h3 className="add_name">Bank Name : </h3>
               <div className="add_input">
@@ -180,12 +213,9 @@ function AddOldage() {
                 />
               </div>
             </div>
-            <div className="add_row">
-            {/* <Link to='/'> */}
-             <div className="btn btn-primary" style={{backgroundColor:'black'}} onClick={handleSubmit}>
+            <div className="btn btn-primary add_row" style={{backgroundColor:'black'}} onClick={handleSubmit}>
                Save
-              </div>
-            {/* </Link> */}
+            </div>
             </div>
             {mess ? <p className="success">✓{mess}</p>:null}
             {error ? <p className="error">⚠{error}</p>: null}
