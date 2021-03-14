@@ -3,14 +3,17 @@ import '../static/css/bankdetails.css'
 import { CashStack } from 'react-bootstrap-icons';
 
 
-function BankDetails() {
+function BankDetails({details}) {
+
+    if(!details) return <h1>Loading ...</h1>
+  else
     return (
         <div className='bankdetails'>
             <div className='body'>
                 <h4><CashStack/> Donate Us At </h4>
                 <div className='key_value'>
                     <div className='key'>Account Number: </div>
-                    <div className='value'>3456789213 </div>
+                    <div className='value'>{details.account_no} </div>
                 </div>
                 <div className='key_value'>
                     <div className='key'>Account Name: </div>
