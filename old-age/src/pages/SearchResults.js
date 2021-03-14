@@ -32,7 +32,7 @@ const old_ages = [
 
 function SearchResults() {
     return (
-        <div style={{ display: 'flex',  height: '86vh', marginTop: -50, marginBottom: -20 }}>
+        <div style={{ display: 'flex', height: '100%', marginTop:'50px', position:'fixed',top:0, right:0,left:0, bottom:0 }}>
             <SearchList old_ages={old_ages}/>
             <MapContainer center={[22.71, 75.85]} zoom={13} style={{height: '100%', width: '100%'}}>
                 <TileLayer
