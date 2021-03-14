@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import '../static/css/login.css';
 import '../static/css/app.css';
-import {Button, Typography} from '@material-ui/core';
+import {Button, h2} from '@material-ui/core';
 import {Link} from 'react-router-dom';
 import BASEURL from '../baseUrl';
 
@@ -50,7 +50,7 @@ function Login() {
     }
     return (
         <div className="login" id="bg" style={{marginBottom: '135px'}}>
-            <Typography variant="h2" style={{margin: '40px'}}>Login</Typography>
+            <h1 style={{margin: '40px'}}>Login</h1>
             <form className="login">
                 <input className="input_field" placeholder="Phone No." type="numeric" value={mobile} onChange={(e) => setMobile(e.target.value)} />
                 <Button variant="contained" color="primary" onClick={sendOtp}>Send Otp</Button>

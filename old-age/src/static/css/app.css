@@ -1,3 +1,7 @@
+*{
+  font-family: 'Syne Mono', monospace;
+}
+
 .app {
   text-align: center;
   overflow-x: hidden;
@@ -15,6 +19,7 @@
 .font{
   font-size: 10px;
   color: gray;
+  
 }
 
 .content{

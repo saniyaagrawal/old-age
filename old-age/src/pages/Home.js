@@ -44,12 +44,12 @@ function Home() {
         <div className="home">  
           <ImageHome />         
             {/* <Carousel/> */}
-            <MyModal/>
+            {/* <MyModal/> */}
             {/* Give Your Loved Ones Quality Care You Can Trust. */}
             <div className="content">
-                <Typography variant="h3" gutterBottom>
+                <h1>
                     The Problem
-                </Typography>
+                </h1>
                 <div className="features">
                     {features.map((feature, i) => (
                         <div className={[classes.root, "individual"].join(' ')} key={i}>
@@ -64,13 +64,13 @@ function Home() {
                         </div>
                     ))}
                 </div>
-                <Typography variant="h3" gutterBottom>
+                <h1>
                     The Solution
-                </Typography>
+                </h1>
                 <div className="search_map">
                     <img src={Map}  className="map"/>
                     <form className="search">
-                        <Typography variant="h3" style={{position: 'absolute', top: '-60px', marginLeft: '30px'}}>Search Old Age</Typography>
+                        <h1 style={{position: 'absolute', top: '-60px', marginLeft: '30px'}}>Search Old Age</h1>
                         <input className="input_field"  placeholder="Search on map"/>
                         <Link to='/searchresult'>
                             <Button variant="contained" color="primary" style={{margin: "10px"}}>
@@ -79,9 +79,9 @@ function Home() {
                         </Link>
                     </form>
                 </div>
-                <Typography variant="h3" gutterBottom>
+                <h1>
                     How You Can Help
-                </Typography>
+                </h1>
                 <div>
                     <HelpBox />
                 </div>
