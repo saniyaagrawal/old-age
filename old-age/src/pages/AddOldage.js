@@ -38,7 +38,9 @@ function AddOldage() {
             account_name,
             account_no,
             bank_name,
-            ifsc_code
+            ifsc_code,
+            lat,
+            longi
         })
     }
 
@@ -59,6 +61,8 @@ function AddOldage() {
     setAccount_no('');
     setBank_name('');
     setIfsc_code('');
+    setLat('');
+    setLongi('');
   };
 
   return (
