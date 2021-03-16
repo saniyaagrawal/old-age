@@ -16,7 +16,7 @@ function MyModal() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`${BASEURL}oldage/55`)
+    fetch(`${BASEURL}oldage/5`)
       .then(res => res.json())
       .then(data => {
         if(data.status==='success') {
