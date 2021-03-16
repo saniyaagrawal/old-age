@@ -1,17 +1,26 @@
 .list {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 400px;
+    overflow-y: scroll;
 }
 
-.child {
+.child{
     display: flex;
     align-items: center;
     padding: 5px;
+    height: 90px;
 }
 
-.child:hover {
+.child:hover{
     background-color: lightgray;
     cursor: grab;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 

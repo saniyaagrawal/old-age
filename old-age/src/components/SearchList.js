@@ -1,17 +1,20 @@
-import React from 'react';
+import React,{useState} from 'react';
 import '../static/css/searchlist.css';
+import '../static/css/app.css';
 import {Avatar} from '@material-ui/core';
 
 
 export default function SearchList({old_ages, setLat, setLongi, changeCenter}) {
 
+  const [keyword, setKeyword] = useState("");
+
   if(!old_ages) return <h1>Loading ...</h1>
   else
-
   return (
     <div className="list" style={{backgroundColor: 'white'}}>
-      <input placeholder="Search on map"/>
-      {old_ages[0].map((data, i) => {
+      <input className="input_field" placeholder="Search on map" style={{width: '250px', alignSelf: 'center'}} onChange={(e) => setKeyword(e.target.value)}/>
+      {old_ages.map((data, i) => {
+        if(data.name.toLowerCase().includes(keyword.toLowerCase()))
         return(
           <div className="child" onClick={() => {setLat(data.lat); setLongi(data.longi); changeCenter(data.lat, data.longi)}}>
             <Avatar style={{marginRight: 10}}>{data.name?.charAt(0)}</Avatar>
@@ -22,7 +25,7 @@ export default function SearchList({old_ages, setLat, setLongi, changeCenter}) {
           </div>
         )
       })}
-      {/* <hr style={{color: 'gray', width: '100%'}}/> */}
+      
     </div>
   );
 }

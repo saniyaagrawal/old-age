@@ -10,12 +10,12 @@ function SearchResults() {
   const [longi, setLongi] = useState(75.85);
 
   useEffect(() => {
-      fetch(`${BASEURL}oldage/5`)
+      fetch(`${BASEURL}oldage`)
       .then(res => res.json())
       .then(data => {
       if(data.status==='success') {
         setOld_ages(data.payload)
-        // console.log(old_ages[0][0].name)
+        console.log(data.payload);
       }
     })
   }, [])
@@ -33,14 +33,14 @@ function SearchResults() {
   if(!old_ages) return <h1>Loading ...</h1>
   else
     return (
-        <div style={{ display: 'flex', height: '100%', marginTop:'50px', position:'fixed',top:0, right:0,left:0, bottom:0 }}>{console.log(lat, longi)}
+        <div style={{ display: 'flex', height: '100%', marginTop:'50px', position:'fixed',top:0, right:0,left:0, bottom:0 }}>
             <SearchList old_ages={old_ages} setLat={setLat} setLongi={setLongi} changeCenter={ChangeCenter} />
             <MapContainer center={[lat, longi]} zoom={13} style={{height: '100%', width: '100%'}}>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {old_ages[0].map(({lat, longi, name}, index) => (
+                {old_ages.map(({lat, longi, name}, index) => (
                     <Marker position={[lat, longi] }>
                         <Popup>
                           {name}
