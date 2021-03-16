@@ -44,7 +44,7 @@ function Home() {
         <div className="home">  
           <ImageHome />         
             {/* <Carousel/> */}
-            {/* <MyModal/> */}
+            <MyModal/>
             {/* Give Your Loved Ones Quality Care You Can Trust. */}
             <div className="content">
                 <h1>

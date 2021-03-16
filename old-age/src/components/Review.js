@@ -5,15 +5,13 @@ import '../static/css/mymodal.css'
 function Review({allReviews}) {
     return (
         <div>
-            {allReviews.map((review)=>{
-                <div>
+            {allReviews.map((review)=>(<div>
                     <div className='name_stars'>
-                        <div className='name'>person name</div>
-                        <div className='stars'><StaticStars value={3}/></div>
+                        <div className='name'>Name</div>
+                        <div className='stars'><StaticStars value={review.rating}/></div>
                     </div>
-                    <div>This is a good and friendly place.</div>
-                </div>
-            })}
+                    <div>{review.description}</div>
+                </div>))}
         </div>
     )
 }

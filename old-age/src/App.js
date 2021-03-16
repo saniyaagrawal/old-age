@@ -20,7 +20,13 @@ function App() {
     <Router>
       <div className="app">
         <Header/>
-        <div style={{marginTop: '100px'}}/>
+        <img 
+        src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJhLdmW4W5Ctkh48lz8tmnXIwaqQ6ZuaHLoQgZCWAXc1xO7nH2nR81MTwDfut3f6rPDFY&usqp=CAU'
+        style={{width: '100%',height:'100%', position: 'fixed', objectFit: 'cover', left: 0}}
+        />
+      
+        {/* <div style={{marginTop: '100px'}}/> */}
+        <div className='fg' style={{marginTop: '100px'}}>
         <Switch>
             <Route path="/login">
               <Login/>
@@ -39,6 +45,7 @@ function App() {
               <Footer/>
             </Route>
         </Switch>
+        </div>
     </div>
     </Router>
   );

@@ -213,7 +213,7 @@ function AddOldage() {
                 />
               </div>
             </div>
-            <div className="btn btn-primary add_row" style={{backgroundColor:'black'}} onClick={handleSubmit}>
+            <div className="btn btn-primary add_row" style={{width:'30%', marginTop:'10%', marginLeft:'70%'}} onClick={handleSubmit}>
                Save
             </div>
             </div>
