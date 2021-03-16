@@ -14,11 +14,13 @@ function Signup() {
     const [name, setName] = useState(null);
     const [isSent, setIsSent] = useState(0);    
     const [mess, setMess] = useState(null);
+    const [sent, setSent] = useState(null);
 
     const sendOtp = () => {
         if(!name || name.length<3) setError("Name must be of length greater than 2");
         else if(!mobile || mobile.length!==10 ) setError("Phone no. must be of 10 digits");
         else{
+            setSent(true);
             setError(null);
             setIsSent(1);
             const opts = {
@@ -61,8 +63,11 @@ function Signup() {
                 <input className="input_field" placeholder="Phone no." inputMode="numeric" onChange={(e) => setMobile(e.target.value)} />
                 <Button variant="contained" color="primary" onClick={sendOtp}>Send Otp</Button>
                 {mess ? <p className="success">✓{mess}</p>:null}
-                <input className="input_field" placeholder="Otp" type="text" value={otp} onChange={(e) => setOtp(e.target.value)}  />
-                <Button variant="contained" color="primary" onClick={signup}>Signup</Button>
+                { sent?<div style={{display:'flex', flexDirection:'column'}}>
+                    <input className="input_field" placeholder="Otp" type="text" value={otp} onChange={(e) => setOtp(e.target.value)}  />
+                    <Button variant="contained" color="primary" onClick={signup} style={{marginInline:'40%'}}>Signup</Button></div>
+                    : <div></div>
+                }
             </form>
             <Link to="login" style={{marginBottom: '20px'}}>Already have an account? Login</Link>
             {error ? <p className="error">⚠{error}</p> : null}
