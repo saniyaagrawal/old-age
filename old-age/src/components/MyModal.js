@@ -5,7 +5,7 @@ import '../static/css/app.css'
 import StaticStars from './StaticStars';
 import BankDetails from './BankDetails';
 import MemberCard from './MemberCard';
-import { DropletFill, GeoAlt, Telephone, Envelope, Eyedropper, Dice5Fill, Stopwatch, Basket2Fill } from 'react-bootstrap-icons';
+import { DropletFill, GeoAlt, Telephone, Envelope, Eyedropper, Dice5Fill, Stopwatch, Basket2Fill, SuitHeart } from 'react-bootstrap-icons';
 import AddComment from './AddComment';
 import Review from './Review';
 import BASEURL from '../baseUrl';
@@ -36,6 +36,7 @@ function MyModal({oldageId}) {
     }
   ]
   const [show, setShow] = useState(false);
+  const [wish, setWish] = useState(false);
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -56,7 +57,7 @@ function MyModal({oldageId}) {
       <Button variant="primary" onClick={() => setShow(true)}>
         Custom Width Modal
       </Button>
-
+      
       <Modal
         show={show}
         onHide={() => setShow(false)}
@@ -64,13 +65,25 @@ function MyModal({oldageId}) {
         aria-labelledby="example-custom-modal-styling-title"
         size="lg"
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton >
           <Modal.Title id="example-custom-modal-styling-title">
             <div className='modal_heading'>
               <div>{data[0][0].name}</div>
               <div className='heading_stars'><StaticStars value={4}/></div>
+              <div className='wishlist'>
+                {
+                  wish?<Button variant='info' onClick={() => setWish(false)}>
+                  Wishlist
+                  <SuitHeart style={{marginLeft:'5px'}}/>
+                </Button>:<Button variant='outline-info' onClick={() => setWish(true)}>
+                  Wishlist
+                  <SuitHeart style={{marginLeft:'5px'}}/>
+                </Button>
+                }
+              </div>
             </div>
           </Modal.Title>
+
         </Modal.Header>
         <Modal.Body>
           <div>
