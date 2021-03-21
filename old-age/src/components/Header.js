@@ -15,9 +15,13 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [islogin, setIslogin] = useState(false);
 
-  const iss = () => {
-    setIslogin(true);
-  };
+ const handleSubmit = (e) => {
+   e.preventDefault();
+  window.localStorage.removeItem("token");
+  alert('Successfully logged out !!')
+  setIslogin(false);
+ }
+
   const toggle = () => setIsOpen(!isOpen);
 
   useEffect(() => {
@@ -29,7 +33,7 @@ const Header = () => {
     <div className='header'>
       <Navbar style={{backgroundColor: 'black'}}  expand="md">
         <img src={Icon} style={{height: '40px', width: '40px', marginRight: '20px', borderRadius : '100%'}} alt="icon" />
-        <NavbarBrand href="/">OLDAGE</NavbarBrand>
+        <NavbarBrand href="/">AGE WELL</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto my_nav" navbar>
@@ -37,13 +41,13 @@ const Header = () => {
               <NavLink href="/" style={{textDecoration:'none'}}><h4 className='nav'>Home</h4></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/signup" style={{textDecoration:'none'}}><h4 className='nav'>About</h4></NavLink>
+              <NavLink href="/add" style={{textDecoration:'none'}}><h4 className='nav'>Add new home</h4></NavLink>
             </NavItem>
              <NavItem>
-                <NavLink href="/login" style={{textDecoration:'none'}}><h4 className='nav'>Donate</h4></NavLink>
+                <NavLink href="/searchresult" style={{textDecoration:'none'}}><h4 className='nav'>Search On Map</h4></NavLink>
               </NavItem> 
             {islogin ? <NavItem>
-                <NavLink onClick={() => window.localStorage.removeItem("token")} href="/" style={{textDecoration:'none'}}><h4 className='nav'>Logout</h4></NavLink>
+                <NavLink onClick={handleSubmit} href="/" style={{textDecoration:'none'}}><h4 className='nav'>Logout</h4></NavLink>
               </NavItem> :
               <NavItem>
                 <NavLink href="/login" style={{textDecoration:'none'}}><h4 className='nav'>Login / Signup</h4></NavLink>

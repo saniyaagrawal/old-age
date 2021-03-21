@@ -11,7 +11,7 @@ import Review from './Review';
 import BASEURL from '../baseUrl';
 
 
-function MyModal() {
+function MyModal({oldageId}) {
   const members=[
     {
       "name":"Harsh Khatri",
@@ -39,7 +39,7 @@ function MyModal() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`${BASEURL}oldage/5`)
+    fetch(`${BASEURL}oldage/${oldageId}`)
       .then(res => res.json())
       .then(data => {
         if(data.status==='success') {
@@ -148,7 +148,7 @@ function MyModal() {
             <Review allReviews={data[2]}/>
             <hr style={{width: '100%', height: 1}} />
             <h4>Add Review</h4>
-            <AddComment/>
+            <AddComment oldageId={oldageId}/>
           </div>
         </Modal.Body>
       

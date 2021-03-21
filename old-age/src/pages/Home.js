@@ -1,7 +1,7 @@
 import React from 'react'
 import '../static/css/app.css';
 import '../static/css/home.css';
-import {Typography, Button} from '@material-ui/core';
+import { Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Map from '../static/images/map.jpg'
 import Icon from '../static/images/icon1.png'
@@ -43,12 +43,11 @@ function Home() {
     return (
         <div className="home">  
           <ImageHome />         
-            {/* <Carousel/> */}
-            <MyModal/>
+            {/* <MyModal oldageId={55}/> */}
             {/* Give Your Loved Ones Quality Care You Can Trust. */}
             <div className="content">
-                <h1>
-                    The Problem
+                <h1 className="font1" style={{marginTop:"3%"}}>
+                    Why?
                 </h1>
                 <div className="features">
                     {features.map((feature, i) => (
@@ -64,13 +63,13 @@ function Home() {
                         </div>
                     ))}
                 </div>
-                <h1>
-                    The Solution
+                <h1 className="font1" style={{marginBottom:"2%", marginTop:"1%"}}>
+                    Where?
                 </h1>
                 <div className="search_map">
                     <img src={Map}  className="map"/>
                     <form className="search">
-                        <h1 style={{position: 'absolute', top: '-60px', marginLeft: '30px'}}>Search Old Age</h1>
+                        <h2 className="font1" style={{position: 'absolute', top: '-60px', marginLeft: '30px'}}>Search Old Age</h2>
                         <input className="input_field"  placeholder="Search on map"/>
                         <Link to='/searchresult'>
                             <Button variant="contained" color="primary" style={{margin: "10px"}}>
@@ -79,7 +78,7 @@ function Home() {
                         </Link>
                     </form>
                 </div>
-                <h1>
+                <h1 className="font1" style={{marginBottom:"2%", marginTop:"3%"}}>
                     How You Can Help
                 </h1>
                 <div>
