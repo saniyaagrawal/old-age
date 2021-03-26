@@ -1,36 +1,38 @@
 import React from 'react'
-import Icon from '../static/images/icon1.png'
-import {Button} from '@material-ui/core';
 import '../static/css/helpbox.css'
+import { Stopwatch, Cart4, Building } from 'react-bootstrap-icons';
 
 function HelpBox() {
     return (
         <div className='helpbox'>
             <div className='item'>
                 <div className='heading'>
-                    <img src={Icon} style={{height: '60px', width: '60px', marginRight: '20px'}} />
+                    {/* <img src={Icon} style={{height: '60px', width: '60px', marginRight: '20px', borderRadius:"100%"}} /> */}
+                    <Stopwatch style={{height: '30px', width: '30px', marginRight: '20px'}}/>
                     Volunteer Time
                 </div>
                 <div className='description'>
-                    All we need is 3 hours/week at least twice a month to make a real impact. If we have a team in your city looking to grow, a Robin will reach out to you.
+                Volunteer must be willing to spend a day with elderly people. Volunteer must talk, share conversations and play games with them. Volunteers must provide emotional and physical support.
                 </div>
             </div>
             <div className='item'>
                 <div className='heading'>
-                    <img src={Icon} style={{height: '60px', width: '60px', marginRight: '20px'}} />
+                    {/* <img src={Icon} style={{height: '60px', width: '60px', marginRight: '20px'}} /> */}
+                    <Cart4 style={{height: '30px', width: '30px', marginRight: '20px'}}/>
                     Contribute Food or Items
                 </div>
                 <div className='description'>
-                    All we need is 3 hours/week at least twice a month to make a real impact. If we have a team in your city looking to grow, a Robin will reach out to you.
+                Donate to help poor elderly to help them have access to a safe old-age home where they can get food, daily chore items and medical care.
                 </div>
             </div>
             <div className='item'>
                 <div className='heading'>
-                    <img src={Icon} style={{height: '60px', width: '60px', marginRight: '20px'}} />
+                    {/* <img src={Icon} style={{height: '60px', width: '60px', marginRight: '20px'}} /> */}
+                    <Building style={{height: '30px', width: '30px', marginRight: '20px'}}/>
                     Donate money for development
                 </div>
                 <div className='description'>
-                    All we need is 3 hours/week at least twice a month to make a real impact. If we have a team in your city looking to grow, a Robin will reach out to you.
+                Elderly persons need food, shelter, healthcare, recreation for their stay to have a dignified life in the old age home. Donate generously for the new construction and facilities.
                 </div>
             </div>
             {/* <div className='item'>

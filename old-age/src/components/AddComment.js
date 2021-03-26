@@ -3,20 +3,18 @@ import ReactStars from "react-rating-stars-component";
 import '../static/css/addcomment.css'
 import BASEURL from '../baseUrl';
 
-function AddComment() {
+function AddComment({oldageId}) {
     const [description, setDescription]=useState();
     const [rating, setRating]=useState();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const user_id=1;
-        const oldageId=55;
+        
         const opts = {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({rating,
-                description,
-                user_id
+                description
             })
         }
 

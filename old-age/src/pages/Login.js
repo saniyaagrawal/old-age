@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import '../static/css/login.css';
 import '../static/css/app.css';
 import {Button, h2} from '@material-ui/core';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import BASEURL from '../baseUrl';
 
 function Login() {
@@ -30,6 +30,7 @@ function Login() {
         }
     }
     const login = () => {
+        
         if(isSent===0) setError("Please send otp first");
         else if(!otp || otp.length<4) setError("Please enter a valid otp");
         else if(mobile.length===10){
@@ -45,6 +46,7 @@ function Login() {
                 if(data.status==='success') {
                     setMess(data.message);
                     window.localStorage.setItem("token", JSON.stringify(data.token));
+                    
                 }
                 else setError(data.message);
             })
@@ -52,7 +54,7 @@ function Login() {
     }
     return (
         <div className="login" id="bg" style={{marginBottom: '135px'}}>
-            <h1 style={{margin: '40px'}}>Login</h1>
+            <h1 className="font1" style={{margin: '40px'}}>Login</h1>
             <form className="login">
                 <input className="input_field" placeholder="Phone No." type="numeric" value={mobile} onChange={(e) => setMobile(e.target.value)} />
                 <Button variant="contained" color="primary" onClick={sendOtp}>Send Otp</Button>

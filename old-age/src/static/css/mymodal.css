@@ -7,6 +7,12 @@
     margin-left: 20px;
 }
 
+.wishlist{
+    display: flex;
+    flex-direction: row;
+    margin-left: 350px;
+}
+
 .review{
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
