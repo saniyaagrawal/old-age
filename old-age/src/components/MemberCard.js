@@ -22,8 +22,6 @@ function MemberCard({id, data}) {
 
   const classes = useStyles();
 
-  const images=['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzrUCpkNzYL0qyUoFPh0edSK6b0rXpreXLHg&usqp=CAU'];
-
   return (
     <div>
         <Card className={classes.root}>

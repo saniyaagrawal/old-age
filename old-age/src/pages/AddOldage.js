@@ -67,13 +67,13 @@ function AddOldage() {
 
   return (
     <>
-    <h1>Add an OldAge</h1>
+    <h1 className="font1">Add an OldAge</h1>
       <div className="background">
         <form noValidate autoComplete="off">
           <div className="add_form">
-            <div> <h2>Basic Details</h2>
+            <div> <h2 className="font1">Basic Details</h2>
             <div className="add_row">
-              <h1 className="add_name">Name:</h1>
+              <h1 className="add_name font1">Name:</h1>
               <div className="add_input">
                 <TextField
                   id="outlined-basic"
@@ -86,7 +86,7 @@ function AddOldage() {
               </div>
             </div>
             <div className="add_row">
-              <h3 className="add_name">Address: </h3>
+              <h3 className="add_name font1">Address: </h3>
               <div className="add_input">
                 <TextField
                   id="outlined-basic"
@@ -99,7 +99,7 @@ function AddOldage() {
               </div>
             </div>
             <div className="add_row">
-              <h3 className="add_name">Latitude: </h3>
+              <h3 className="add_name font1">Latitude: </h3>
               <div className="add_input">
                 <TextField
                   id="outlined-basic"
@@ -112,7 +112,7 @@ function AddOldage() {
               </div>
             </div>
             <div className="add_row">
-              <h3 className="add_name">Longitude: </h3>
+              <h3 className="add_name font1">Longitude: </h3>
               <div className="add_input">
                 <TextField
                   id="outlined-basic"
@@ -125,7 +125,7 @@ function AddOldage() {
               </div>
             </div>
             <div className="add_row">
-              <h3 className="add_name">Phone no.:</h3>
+              <h3 className="add_name font1">Phone no.:</h3>
               <div className="add_input">
                 <TextField
                   id="outlined-basic"
@@ -138,7 +138,7 @@ function AddOldage() {
               </div>
             </div>
             <div className="add_row">
-              <h3 className="add_name">Email Id: </h3>
+              <h3 className="add_name font1">Email Id: </h3>
               <div className="add_input">
                 <TextField
                   id="outlined-basic"
@@ -151,7 +151,7 @@ function AddOldage() {
               </div>
             </div>
             <div className="add_row">
-              <h3 className="add_name">Visiting Hours: </h3>
+              <h3 className="add_name font1">Visiting Hours: </h3>
               <div className="add_input">
                 <TextField
                   id="outlined-basic"
@@ -165,9 +165,9 @@ function AddOldage() {
             </div>
             </div>
             <div> 
-              <h2>Bank Details</h2>
+              <h2 className="font1">Bank Details</h2>
             <div className="add_row">
-              <h3 className="add_name">Bank Name : </h3>
+              <h3 className="add_name font1">Bank Name : </h3>
               <div className="add_input">
                 <TextField
                   id="outlined-basic"
@@ -180,7 +180,7 @@ function AddOldage() {
               </div>
             </div>
             <div className="add_row">
-              <h3 className="add_name">Account Name : </h3>
+              <h3 className="add_name font1">Account Name : </h3>
               <div className="add_input">
                 <TextField
                   id="outlined-basic"
@@ -193,7 +193,7 @@ function AddOldage() {
               </div>
             </div>
             <div className="add_row">
-              <h3 className="add_name">Account Number : </h3>
+              <h3 className="add_name font1">Account Number : </h3>
               <div className="add_input">
                 <TextField
                   id="outlined-basic"
@@ -206,7 +206,7 @@ function AddOldage() {
               </div>
             </div>
             <div className="add_row">
-              <h3 className="add_name">IFSC code : </h3>
+              <h3 className="add_name font1">IFSC code : </h3>
               <div className="add_input">
                 <TextField
                   id="outlined-basic"

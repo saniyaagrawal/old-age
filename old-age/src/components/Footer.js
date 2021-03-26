@@ -8,7 +8,7 @@ function Footer() {
                     © All rights reserved 2021
                 </div>
                 <div>
-                    Contact us at: abcxyz122@gmail.com
+                    Contact us at: agewell@gmail.com
                 </div>
             </div>
         </div>

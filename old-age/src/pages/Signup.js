@@ -57,7 +57,7 @@ function Signup() {
 
     return (
         <div className="login" id="bg" style={{marginBottom: '52px'}}>
-            <h1 style={{margin: '40px'}}>Signup</h1>
+            <h1 className="font1" style={{margin: '40px'}}>Signup</h1>
             <form className="login">
                 <input className="input_field" placeholder="Name" type="text" vlaue={name} onChange={(e) => setName(e.target.value)} />
                 <input className="input_field" placeholder="Phone no." inputMode="numeric" onChange={(e) => setMobile(e.target.value)} />
