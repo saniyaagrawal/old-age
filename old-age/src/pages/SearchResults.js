@@ -10,12 +10,12 @@ function SearchResults() {
   const [longi, setLongi] = useState(75.85);
 
   useEffect(() => {
-      fetch(`${BASEURL}oldage/5`)
+      fetch(`${BASEURL}oldage`)
       .then(res => res.json())
       .then(data => {
       if(data.status==='success') {
         setOld_ages(data.payload)
-        // console.log(old_ages[0][0].name)
+        console.log(data.payload);
       }
     })
   }, [])
@@ -40,7 +40,7 @@ function SearchResults() {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {old_ages[0].map(({lat, longi, name}, index) => (
+                {old_ages.map(({lat, longi, name}, index) => (
                     <Marker position={[lat, longi] }>
                         <Popup>
                           {name}

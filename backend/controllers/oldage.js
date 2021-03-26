@@ -17,11 +17,11 @@ const getOldage = (req, res) => {
 }
 
 const addOldage = (req, res) => {
-    var query = "insert into oldage(name, address, phone_no, visiting_hours, lat, longi) values (?,?,?,?,?,?)";
+    var query = "insert into oldage(name, address, phone_no, email, visiting_hours, lat, longi) values (?,?,?,?,?,?,?)";
     var query1 = "insert into bankdetails(account_no, account_name, bank_name, ifsc_code) values (?,?,?,?)";
     var query2 = "insert into owns(account_no, oldage_id) values (?,?)";
 
-    db.query(query, [req.body.name, req.body.address, req.body.phone_no, req.body.visiting_hours, req.body.lat, req.body.longi], (err, data) => {
+    db.query(query, [req.body.name, req.body.address, req.body.phone_no, req.body.email , req.body.visiting_hours, req.body.lat, req.body.longi], (err, data) => {
         if(err){
             res.status(400).json({status: 'failed', message: 'insert into oldage failed!'});
         }else{

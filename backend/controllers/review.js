@@ -1,8 +1,13 @@
 const db=require("../connection");
-
+var jwt = require('jsonwebtoken');
 
 const addReview = (req, res) => {
-
+    // try {
+    //     var decoded = jwt.verify(token, 'wrong-secret');
+    //   } catch(err) {
+    //     // err
+    //   }
+    // console.log(decoded) ;
     var query1 = "insert into review(rating, description) values (?,?)";
     var query2 = "insert into belongs(review_id, oldage_id) values (?,?)";
     var query3 = "insert into writtenby(review_id, user_id) values (?,?)";
