@@ -73,12 +73,12 @@ function MyModal({oldageId}) {
               <div className='wishlist'>
                 {
                   wish?<Button variant='info' onClick={() => setWish(false)}>
-                  Wishlist
+                  Favorites
                   <SuitHeart style={{marginLeft:'5px'}}/>
-                </Button>:<Button variant='outline-info' onClick={() => setWish(true)}>
-                  Wishlist
-                  <SuitHeart style={{marginLeft:'5px'}}/>
-                </Button>
+                  </Button>:<Button variant='outline-info' onClick={() => setWish(true)}>
+                    Favorites
+                    <SuitHeart style={{marginLeft:'5px'}}/>
+                  </Button>
                 }
               </div>
             </div>
