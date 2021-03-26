@@ -28,7 +28,6 @@ function SearchResults() {
     })  
     return null
   }
-
   
   if(!old_ages) return <h1>Loading ...</h1>
   else
@@ -40,13 +39,13 @@ function SearchResults() {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {old_ages.map(({lat, longi, name}, index) => (
+                {old_ages.map(({lat, longi, name}, index) => lat&&longi ?(
                     <Marker position={[lat, longi] }>
                         <Popup>
                           {name}
                         </Popup>
                     </Marker>
-                ))}
+                ): null )}
             </MapContainer>
         </div>
     )

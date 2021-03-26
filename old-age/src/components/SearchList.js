@@ -16,7 +16,7 @@ export default function SearchList({old_ages, setLat, setLongi, changeCenter}) {
       {old_ages.map((data, i) => {
         if(data.name.toLowerCase().includes(keyword.toLowerCase()))
         return(
-          <div className="child" onClick={() => {setLat(data.lat); setLongi(data.longi); changeCenter(data.lat, data.longi)}}>
+          <div className="child" onClick={() => {setLat(data.lat); setLongi(data.longi);}}>
             <Avatar style={{marginRight: 10}}>{data.name?.charAt(0)}</Avatar>
             <div className="info">
               <h4>{data.name}</h4>
