@@ -4,7 +4,7 @@ import '../static/css/app.css';
 import {Avatar} from '@material-ui/core';
 
 
-export default function SearchList({old_ages, setLat, setLongi, changeCenter}) {
+export default function SearchList({old_ages, setLat, setLongi, setOldage}) {
 
   const [keyword, setKeyword] = useState("");
 
@@ -16,7 +16,7 @@ export default function SearchList({old_ages, setLat, setLongi, changeCenter}) {
       {old_ages.map((data, i) => {
         if(data.name.toLowerCase().includes(keyword.toLowerCase()))
         return(
-          <div className="child" onClick={() => {setLat(data.lat); setLongi(data.longi);}}>
+          <div className="child" key={i} onClick={() => {setLat(data.lat); setLongi(data.longi); setOldage(data)}}>
             <Avatar style={{marginRight: 10}}>{data.name?.charAt(0)}</Avatar>
             <div className="info">
               <h4>{data.name}</h4>

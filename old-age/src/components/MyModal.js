@@ -11,7 +11,7 @@ import Review from './Review';
 import BASEURL from '../baseUrl';
 
 
-function MyModal({oldageId}) {
+function MyModal({oldageId, show, setShow}) {
   const members=[
     {
       "name":"Harsh Khatri",
@@ -35,7 +35,6 @@ function MyModal({oldageId}) {
       "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHN3cXzhLEkf_LZJRsbgFqQGCrbCYQROTIjw&usqp=CAU"
     }
   ]
-  const [show, setShow] = useState(false);
   const [wish, setWish] = useState(false);
   const [data, setData] = useState(null);
 
@@ -45,22 +44,17 @@ function MyModal({oldageId}) {
       .then(data => {
         if(data.status==='success') {
           setData(data.payload)
-          console.log(data.payload[2][0]);
         }
     })
-  }, [])
+  }, [show])
   
   if(!data) return <h1>Loading ...</h1>
   else
   return (
     <>
-      <Button variant="primary" onClick={() => setShow(true)}>
-        Custom Width Modal
-      </Button>
-      
       <Modal
         show={show}
-        onHide={() => setShow(false)}
+        onHide={() => {setShow(false);}}
         dialogClassName="modal-100w"
         aria-labelledby="example-custom-modal-styling-title"
         size="lg"
